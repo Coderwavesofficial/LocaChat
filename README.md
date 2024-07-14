@@ -23,11 +23,11 @@ Ensure you have the following installed:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/LocaChat.git
+    git clone https://github.com/coderwavesofficial/LocaChat.git
     ```
 2. **Navigate to the project directory**:
     ```bash
-    cd LocaChat/frontend
+    cd LocaChat
     ```
 3. **Install dependencies**:
     ```bash
@@ -42,4 +42,9 @@ Ensure you have the following installed:
 
 To start the development server, run:
 ```bash
-npm start
+npm run android
+```
+ or
+```bash
+npm run ios
+```
