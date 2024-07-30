@@ -12,7 +12,7 @@ const Button = ({title, onPress}) => {
         alignItems: 'center',
       }}
       onPress={onPress}>
-      <Text style={{color: '#EBF4F6'}}>Signup</Text>
+      <Text style={{color: '#EBF4F6'}}>{title}</Text>
     </TouchableOpacity>
   );
 };

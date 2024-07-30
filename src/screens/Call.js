@@ -7,62 +7,62 @@ import {
   View,
 } from 'react-native';
 
-const HomeScreen = () => {
+const CallScreen = () => {
   let chats = [
     {
       id: 1,
       name: 'Lorem',
       lastMessage: 'Hello, How Are You',
-      lastSeen: '2 mint ago',
+      callTime: 'Today, 09:30 AM ',
       profileImage: require('../assets/icons/male.png'),
     },
     {
       id: 2,
       name: 'John Abraham',
       lastMessage: 'Its Raining Day',
-      lastSeen: '1 hour ago',
+      callTime: 'Today, 09:30 AM ',
       profileImage: require('../assets/icons/female.png'),
     },
     {
       id: 3,
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
-      lastSeen: '2 mint ago',
+      callTime: 'Today, 09:30 AM ',
       profileImage: require('../assets/icons/male.png'),
     },
     {
       id: 3,
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
-      lastSeen: '2 mint ago',
+      callTime: 'Today, 09:30 AM ',
       profileImage: require('../assets/icons/female.png'),
     },
     {
       id: 3,
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
-      lastSeen: '2 mint ago',
+      callTime: 'Today, 09:30 AM ',
       profileImage: require('../assets/icons/female.png'),
     },
     {
       id: 3,
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
-      lastSeen: '2 mint ago',
+      callTime: 'Today, 09:30 AM ',
       profileImage: require('../assets/icons/male.png'),
     },
     {
       id: 3,
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
-      lastSeen: '2 mint ago',
+      callTime: 'Today, 09:30 AM ',
       profileImage: require('../assets/icons/male.png'),
     },
     {
       id: 3,
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
-      lastSeen: '2 mint ago',
+      callTime: 'Today, 09:30 AM ',
       profileImage: require('../assets/icons/female.png'),
     },
   ];
@@ -140,6 +140,11 @@ const HomeScreen = () => {
           backgroundColor: '#fff',
           overflow: 'hidden',
         }}>
+        <View style={{paddingTop: 20, paddingLeft: 20}}>
+          <Text style={{fontWeight: 900, fontSize: 15, color: '#000'}}>
+            Recent
+          </Text>
+        </View>
         <ScrollView>
           {chats.map((value, index) => {
             return (
@@ -152,21 +157,42 @@ const HomeScreen = () => {
                   justifyContent: 'space-between',
                   paddingHorizontal: 10,
                   height: 80,
+                  backgroundColor: 'red',
+                  marginTop: 20,
                 }}>
-                <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <View>
                   <Image
                     style={{width: 70, resizeMode: 'contain'}}
                     source={value.profileImage}
                   />
-                  <View style={{paddingLeft: 15}}>
+                </View>
+                <View
+                  style={{
+                    alignItems: 'center',
+                  }}>
+                  <View>
                     <Text style={{fontWeight: '900', fontSize: 16}}>
                       {value.name}
                     </Text>
-                    <Text>{value.lastMessage}</Text>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      gap: 20,
+                    }}>
+                    <Image
+                      style={{
+                        width: 20,
+                        resizeMode: 'contain',
+                      }}
+                      source={require('../assets/icons/incoming-call.png')}
+                    />
+                    <Text>{value.callTime}</Text>
                   </View>
                 </View>
                 <View>
-                  <Text>{value.lastSeen}</Text>
+                  <Text>{value.callTime}</Text>
                 </View>
               </View>
             );
@@ -176,4 +202,4 @@ const HomeScreen = () => {
     </SafeAreaView>
   );
 };
-export default HomeScreen;
+export default CallScreen;

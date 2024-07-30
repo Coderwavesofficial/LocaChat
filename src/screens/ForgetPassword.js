@@ -1,10 +1,17 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import Button from '../components/Button';
 import Input from '../components/Input';
 
-const Login = ({navigation}) => {
+const ForgetPassword = ({navigation}) => {
   return (
-    <View style={{flex: 1, paddingHorizontal: 10}}>
+    <SafeAreaView style={{flex: 1, paddingHorizontal: 10}}>
       <View style={{flex: 2, marginTop: 20, gap: 5}}>
         <View
           style={{
@@ -12,7 +19,7 @@ const Login = ({navigation}) => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text style={{fontWeight: '800'}}>Login to LocaChat</Text>
+          <Text style={{fontWeight: '800'}}>ForgetPassword to LocaChat</Text>
           <Text style={style.paragraph}>
             Welcome back! Sign in using your social account or email to continue
             us
@@ -54,26 +61,14 @@ const Login = ({navigation}) => {
       </View>
       <View style={{flex: 3}}>
         <Input label={'Your Email'} />
-        <Input label={'Password'} />
       </View>
       <View style={{flex: 1}}>
-        <Button title={'Login'} />
-        <Text
-          style={{
-            fontWeight: '800',
-            textAlign: 'center',
-            marginTop: 10,
-          }}
-          onPress={() => {
-            navigation.navigate('ForgetPassword');
-          }}>
-          Forget Password
-        </Text>
+        <Button title={'Forget Password'} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
-export default Login;
+export default ForgetPassword;
 
 const style = StyleSheet.create({
   paragraph: {

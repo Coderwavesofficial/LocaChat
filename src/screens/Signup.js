@@ -4,8 +4,8 @@ import Input from '../components/Input';
 
 const Signup = ({navigation}) => {
   return (
-    <View style={{flex: 1, paddingHorizontal: 10}}>
-      <ScrollView>
+    <ScrollView>
+      <View style={{flex: 1, paddingHorizontal: 10}}>
         <View style={{flex: 2, marginTop: 20, gap: 5}}>
           <View
             style={{
@@ -59,8 +59,13 @@ const Signup = ({navigation}) => {
           <Input label={'Password'} />
           <Input label={'Confirm Password'} />
         </View>
-        <View style={{flex: 1}}>
-          <Button />
+        <View style={{flex: 1, marginTop: 40}}>
+          <Button
+            title={'Signup'}
+            onPress={() => {
+              navigation.navigate('Tabs');
+            }}
+          />
           <Text
             style={{
               fontWeight: '800',
@@ -68,13 +73,13 @@ const Signup = ({navigation}) => {
               marginTop: 10,
             }}
             onPress={() => {
-              navigation.navigate('Home');
+              navigation.navigate('ForgetPassword');
             }}>
             Forget Password
           </Text>
         </View>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 export default Signup;
