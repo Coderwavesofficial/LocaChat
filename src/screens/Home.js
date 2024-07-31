@@ -4,17 +4,18 @@ import {
   ScrollView,
   StatusBar,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   let chats = [
     {
       id: 1,
       name: 'Lorem',
       lastMessage: 'Hello, How Are You',
       lastSeen: '2 mint ago',
-      profileImage: require('../assets/icons/male.png'),
+      profileImage: require('../assets/icons/girl.png'),
     },
     {
       id: 2,
@@ -28,7 +29,7 @@ const HomeScreen = () => {
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
       lastSeen: '2 mint ago',
-      profileImage: require('../assets/icons/male.png'),
+      profileImage: require('../assets/icons/boy.png'),
     },
     {
       id: 3,
@@ -42,14 +43,14 @@ const HomeScreen = () => {
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
       lastSeen: '2 mint ago',
-      profileImage: require('../assets/icons/female.png'),
+      profileImage: require('../assets/icons/boy.png'),
     },
     {
       id: 3,
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
       lastSeen: '2 mint ago',
-      profileImage: require('../assets/icons/male.png'),
+      profileImage: require('../assets/icons/girl.png'),
     },
     {
       id: 3,
@@ -69,7 +70,7 @@ const HomeScreen = () => {
   let status = [
     {
       id: 1,
-      name: 'Ruby',
+      name: 'My status',
       profileImage: require('../assets/icons/female.png'),
     },
     {
@@ -143,31 +144,35 @@ const HomeScreen = () => {
         <ScrollView>
           {chats.map((value, index) => {
             return (
-              <View
-                key={index}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  paddingHorizontal: 10,
-                  height: 80,
-                }}>
-                <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                  <Image
-                    style={{width: 70, resizeMode: 'contain'}}
-                    source={value.profileImage}
-                  />
-                  <View style={{paddingLeft: 15}}>
-                    <Text style={{fontWeight: '900', fontSize: 16}}>
-                      {value.name}
-                    </Text>
-                    <Text>{value.lastMessage}</Text>
+              <View key={index} style={{flex: 1}}>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Chat');
+                  }}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    paddingHorizontal: 10,
+                    height: 80,
+                  }}>
+                  <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                    <Image
+                      style={{width: 70, resizeMode: 'contain'}}
+                      source={value.profileImage}
+                    />
+                    <View style={{paddingLeft: 15}}>
+                      <Text style={{fontWeight: '900', fontSize: 16}}>
+                        {value.name}
+                      </Text>
+                      <Text>{value.lastMessage}</Text>
+                    </View>
                   </View>
-                </View>
-                <View>
-                  <Text>{value.lastSeen}</Text>
-                </View>
+                  <View>
+                    <Text>{value.lastSeen}</Text>
+                  </View>
+                </TouchableOpacity>
               </View>
             );
           })}

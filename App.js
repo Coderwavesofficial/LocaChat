@@ -9,6 +9,7 @@ import Signup from './src/screens/Signup';
 import ForgetPassword from './src/screens/ForgetPassword';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MyTabs from './src/screens/BottomNavigation';
+import Chat from './src/screens/Chat';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,11 @@ function App() {
           options={{headerShown: false}}
           name="Tabs"
           component={MyTabs}
+        />
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="Chat"
+          component={Chat}
         />
         <Stack.Screen
           options={({navigation}) => ({

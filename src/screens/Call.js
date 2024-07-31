@@ -8,20 +8,48 @@ import {
 } from 'react-native';
 
 const CallScreen = () => {
-  let chats = [
+  let call = [
     {
       id: 1,
       name: 'Lorem',
       lastMessage: 'Hello, How Are You',
       callTime: 'Today, 09:30 AM ',
-      profileImage: require('../assets/icons/male.png'),
+      profileImage: require('../assets/icons/girl.png'),
     },
     {
       id: 2,
       name: 'John Abraham',
       lastMessage: 'Its Raining Day',
       callTime: 'Today, 09:30 AM ',
+      profileImage: require('../assets/icons/boy.png'),
+    },
+    {
+      id: 3,
+      name: 'Liam',
+      lastMessage: 'Hello, How Are You',
+      callTime: 'Today, 09:30 AM ',
+      profileImage: require('../assets/icons/girl.png'),
+    },
+    {
+      id: 3,
+      name: 'Liam',
+      lastMessage: 'Hello, How Are You',
+      callTime: 'Today, 09:30 AM ',
+      profileImage: require('../assets/icons/boy.png'),
+    },
+    {
+      id: 3,
+      name: 'Liam',
+      lastMessage: 'Hello, How Are You',
+      callTime: 'Today, 09:30 AM ',
       profileImage: require('../assets/icons/female.png'),
+    },
+    {
+      id: 3,
+      name: 'Liam',
+      lastMessage: 'Hello, How Are You',
+      callTime: 'Today, 09:30 AM ',
+      profileImage: require('../assets/icons/girl.png'),
     },
     {
       id: 3,
@@ -35,35 +63,7 @@ const CallScreen = () => {
       name: 'Liam',
       lastMessage: 'Hello, How Are You',
       callTime: 'Today, 09:30 AM ',
-      profileImage: require('../assets/icons/female.png'),
-    },
-    {
-      id: 3,
-      name: 'Liam',
-      lastMessage: 'Hello, How Are You',
-      callTime: 'Today, 09:30 AM ',
-      profileImage: require('../assets/icons/female.png'),
-    },
-    {
-      id: 3,
-      name: 'Liam',
-      lastMessage: 'Hello, How Are You',
-      callTime: 'Today, 09:30 AM ',
-      profileImage: require('../assets/icons/male.png'),
-    },
-    {
-      id: 3,
-      name: 'Liam',
-      lastMessage: 'Hello, How Are You',
-      callTime: 'Today, 09:30 AM ',
-      profileImage: require('../assets/icons/male.png'),
-    },
-    {
-      id: 3,
-      name: 'Liam',
-      lastMessage: 'Hello, How Are You',
-      callTime: 'Today, 09:30 AM ',
-      profileImage: require('../assets/icons/female.png'),
+      profileImage: require('../assets/icons/girl.png'),
     },
   ];
   let status = [
@@ -107,33 +107,7 @@ const CallScreen = () => {
       <StatusBar backgroundColor="#000" />
       <View
         style={{
-          flex: 1,
-          flexDirection: 'column',
-          backgroundColor: '#000',
-        }}>
-        <ScrollView style={{flex: 1}} horizontal={true}>
-          {status.map((value, index) => {
-            return (
-              <View
-                key={index}
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: 0,
-                }}>
-                <Image
-                  style={{width: 80, height: 80, resizeMode: 'contain'}}
-                  source={value.profileImage}
-                />
-                <Text style={{color: '#fff'}}>{value.name}</Text>
-              </View>
-            );
-          })}
-        </ScrollView>
-      </View>
-      <View
-        style={{
+          marginTop: 30,
           flex: 5,
           borderTopStartRadius: 30,
           borderTopEndRadius: 30,
@@ -146,7 +120,7 @@ const CallScreen = () => {
           </Text>
         </View>
         <ScrollView>
-          {chats.map((value, index) => {
+          {call.map((value, index) => {
             return (
               <View
                 key={index}
@@ -157,8 +131,7 @@ const CallScreen = () => {
                   justifyContent: 'space-between',
                   paddingHorizontal: 10,
                   height: 80,
-                  backgroundColor: 'red',
-                  marginTop: 20,
+                  gap: 10,
                 }}>
                 <View>
                   <Image
@@ -168,7 +141,9 @@ const CallScreen = () => {
                 </View>
                 <View
                   style={{
-                    alignItems: 'center',
+                    flex: 1,
+                    justifyContent: 'space-around',
+                    height: 60,
                   }}>
                   <View>
                     <Text style={{fontWeight: '900', fontSize: 16}}>
@@ -178,21 +153,37 @@ const CallScreen = () => {
                   <View
                     style={{
                       flexDirection: 'row',
-                      alignItems: 'center',
-                      gap: 20,
+                      gap: 10,
                     }}>
                     <Image
                       style={{
                         width: 20,
+                        height: 20,
                         resizeMode: 'contain',
+                        tintColor: 'green',
                       }}
                       source={require('../assets/icons/incoming-call.png')}
                     />
                     <Text>{value.callTime}</Text>
                   </View>
                 </View>
-                <View>
-                  <Text>{value.callTime}</Text>
+                <View style={{flexDirection: 'row', gap: 25}}>
+                  <Image
+                    style={{
+                      width: 20,
+                      height: 20,
+                      resizeMode: 'contain',
+                    }}
+                    source={require('../assets/icons/call.png')}
+                  />
+                  <Image
+                    style={{
+                      width: 20,
+                      height: 20,
+                      resizeMode: 'contain',
+                    }}
+                    source={require('../assets/icons/video.png')}
+                  />
                 </View>
               </View>
             );

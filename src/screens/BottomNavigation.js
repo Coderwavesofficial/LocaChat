@@ -87,24 +87,39 @@ function MyTabs() {
           headerLeft: () => (
             <View
               style={{
-                height: 70,
-                justifyContent: 'center',
+                padding: 10,
+                marginLeft: 10,
+                borderRadius: 80,
+                borderWidth: 1,
+                borderColor: '#fff',
               }}>
               <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Image
                   tintColor={'#fff'}
-                  style={{width: 30, resizeMode: 'contain'}}
+                  style={{width: 20, height: 20, resizeMode: 'contain'}}
                   source={require('../assets/icons/arrow.png')}
                 />
               </TouchableOpacity>
             </View>
           ),
           headerRight: () => (
-            <View style={{height: 70, justifyContent: 'center'}}>
+            <View
+              style={{
+                padding: 10,
+                marginRight: 10,
+                borderRadius: 50,
+                borderWidth: 1,
+                borderColor: '#fff',
+              }}>
               <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                 <Image
-                  style={{width: 50, resizeMode: 'contain'}}
-                  source={require('../assets/icons/male.png')}
+                  style={{
+                    width: 20,
+                    height: 20,
+                    resizeMode: 'contain',
+                    tintColor: '#fff',
+                  }}
+                  source={require('../assets/icons/add-call.png')}
                 />
               </TouchableOpacity>
             </View>
